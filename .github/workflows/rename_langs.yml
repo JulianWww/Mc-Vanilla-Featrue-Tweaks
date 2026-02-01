@@ -1,0 +1,29 @@
+name: Rename Translations
+
+on:
+  push:
+    branches:
+      - "translations_*"
+      
+permissions:
+  contents: write
+  
+jobs:
+  rename_files:
+    name: "rename_files"
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout repository
+        uses: actions/checkout@v3
+      - name: "rename_lang_files"
+        run : |
+          rename 'y/A-Z/a-z/' *
+      - name: Commit to the repo
+        run: |
+          git config --global user.name "JulianWww/generator"
+          git config --global user.email "generator[bot]@JulianWww.github.io"
+          git pull
+          git add .
+          # Force the build to succeed, even if no files were changed
+          git commit -m 'auto generated data' || true
+          git push
