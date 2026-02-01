@@ -1,0 +1,41 @@
+{
+	"schemaVersion": 1,
+	"id": "mc-vanilla-featrue-tweaks",
+	"version": "${version}",
+	"name": "mc-vanilla-featrue-tweaks",
+	"description": "This is an example description! Tell everyone what your mod is about!",
+	"authors": [
+		"Julian Wandhoven"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/mc-vanilla-featrue-tweaks/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"net.denanu.mc_vanille_feature_tweaks.Mcvanillafeatruetweaks"
+		],
+		"client": [
+			"net.denanu.mc_vanille_feature_tweaks.McvanillafeatruetweaksClient"
+		],
+		"fabric-datagen": [ 
+			"net.denanu.mc_vanille_feature_tweaks.datagen.ModDataGenerator"
+		] 
+	},
+	"mixins": [
+		"mc-vanilla-featrue-tweaks.mixins.json",
+		{
+			"config": "mc-vanilla-featrue-tweaks.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.18.4",
+		"minecraft": "~1.21.11",
+		"java": ">=21",
+		"fabric-api": "*"
+	}
+}

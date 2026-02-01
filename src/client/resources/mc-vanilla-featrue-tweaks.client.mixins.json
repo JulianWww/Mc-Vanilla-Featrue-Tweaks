@@ -1,0 +1,11 @@
+{
+	"required": true,
+	"package": "net.denanu.mc_vanille_feature_tweaks.mixin.client",
+	"compatibilityLevel": "JAVA_21",
+	"client": [
+		"SmithingScreenMixin"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	}
+}
